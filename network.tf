@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_vpc" "demo_vpc" {
     cidr_block = var.cidr_block
     enable_dns_hostnames = true
