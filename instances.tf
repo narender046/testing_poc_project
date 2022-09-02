@@ -8,7 +8,7 @@ resource "aws_instance" "webserver1" {
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
     key_name = "jenkins"
-    tags = local.common_tags
+    tags = merge(local.common_tags, {"Name"="webserver1"})
 }
 
 resource "aws_instance" "webserver2" {
@@ -17,7 +17,7 @@ resource "aws_instance" "webserver2" {
     subnet_id = aws_subnet.subnet2.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
     key_name = "jenkins"
-    tags = local.common_tags
+    tags = merge(local.common_tags, {"Name"="webserver2"})
 }
 
 resource "aws_instance" "Ansible-control-node" {
@@ -26,5 +26,5 @@ resource "aws_instance" "Ansible-control-node" {
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
     key_name = "jenkins"
-    tags = local.common_tags
+    tags = merge(local.common_tags, {"Name"="Ansible-control-node"})
 }
