@@ -31,7 +31,7 @@ variable "map_public_ip_on_launch" {
 variable "instance_type" {
     type = string
     description = "We want this type of Ec2 for our project "
-    default = "t2.medium"
+    default = "t3.medium"
 }
 
 variable "company" {
