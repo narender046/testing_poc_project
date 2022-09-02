@@ -13,7 +13,7 @@ resource "aws_vpc" "demo_vpc" {
 }
 
 resource "aws_subnet" "subnet1" {
-  availability_zone = data.aws_availability_zones.available.names[0]
+  availability_zone = "us-east-1a"
   cidr_block = var.subnets_cidr_block[0]
   vpc_id = aws_vpc.demo_vpc.id
   map_public_ip_on_launch = true
@@ -21,7 +21,7 @@ resource "aws_subnet" "subnet1" {
 }
 
 resource "aws_subnet" "subnet2" {
-  availability_zone = data.aws_availability_zones.available.names[1]
+  availability_zone = "us-east-1b"
   cidr_block = var.subnets_cidr_block[1]
   vpc_id = aws_vpc.demo_vpc.id
   map_public_ip_on_launch = true
