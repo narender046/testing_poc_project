@@ -1,9 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIAZLIMTM3ZNCLXZEJM"
-  secret_key = "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"
-}
-
 resource "aws_vpc" "demo_vpc" {
     cidr_block = var.cidr_block
     enable_dns_hostnames = true
