@@ -7,7 +7,7 @@ resource "aws_instance" "webserver1" {
     instance_type = var.instance_type
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
-    key_name = "tf-demo"
+    key_name = "jenk1"
     tags = local.common_tags
 }
 
@@ -16,7 +16,7 @@ resource "aws_instance" "webserver2" {
     instance_type = var.instance_type
     subnet_id = aws_subnet.subnet2.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
-    key_name = "tf-demo"
+    key_name = "jenk1"
     tags = local.common_tags
 }
 
@@ -25,6 +25,6 @@ resource "aws_instance" "Ansible-control-node" {
     instance_type = var.instance_type
     subnet_id = aws_subnet.subnet1.id
     vpc_security_group_ids = [aws_security_group.web-sg.id]
-    key_name = "tf-demo"
+    key_name = "jenk1"
     tags = local.common_tags
 }
